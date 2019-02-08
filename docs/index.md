@@ -47,6 +47,7 @@ Add:
 ## Functional documentation
 * [Behavior of Product Variants](./functional/behavior-of-product-variants.md)
 * [Product Visibility and Exclude from Sale](./functional/product-visibility-and-exclude-from-sale.md)
+* [Cart](./functional/cart.md)
 
 ## Frontend
 * [Design implementation and Customization](./frontend/design-implementation-and-customization.md)
