@@ -55,7 +55,7 @@ if you want to have products data exported to Elasticsearch after `build-demo` t
     +       - { resource: services/data_fixtures.yml }
     ```
     - change namespaces of data fixtures from `Shopsys\FrameworkBundle\DataFixtures` to `Shopsys\ShopBundle\DataFixtures` (in tests and *.yml configurations)
-        - check correctness of registered DataFixture services based on the state of [this config file](https://github.com/shopsys/shopsys/blob/v7.0.0/project-base/src/Shopsys/ShopBundle/Resources/config/services.yml)
+        - check correctness of registered DataFixture services based on the state of [services.yml](https://github.com/shopsys/project-base/blob/v7.0.0/src/Shopsys/ShopBundle/Resources/config/services.yml) of [shopsys/project-base] repository
     - change the value of data fixtures resource folder in `paths.yml`
         ```diff
         -    shopsys.data_fixtures.resources_dir: '%shopsys.framework.root_dir%/src/DataFixtures/resources'
