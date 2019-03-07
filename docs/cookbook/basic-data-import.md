@@ -45,7 +45,7 @@ The source is mocked with [apiari.io service](http://docs.ssfwbasicdataimportdem
 ]
 ```
 
-### Step 1 - Add `$extId` to [Product](../../project-base/src/Shopsys/ShopBundle/Model/Product/Product.php) [entity](../introduction/basics-about-model-architecture.md#entity)
+### Step 1 - Add `$extId` to [Product](../../project-base/src/Shopsys/ShopBundle/Model/Product/Product.php) [entity](../model/basics-about-model-architecture.md#entity)
 We need to store the relation between your application database and the external source of data because later, in data transfer processing,
 we will be deciding whether to create a new product or update existing one, based on the `$extId` attribute.
 If you do not know how to add an attribute to an entity, take a look at [the cookbook](adding-new-attribute-to-an-entity.md).
@@ -168,8 +168,8 @@ private function importExternalProductsData(array $externalProductsData)
 ```
 
 *Note: We need to know whether the product with given `$extId` exists.
-For that purpose, we will use a descendant of [`ProductFacade`](../../packages/framework/src/Model/Product/ProductFacade.php) ([more about facades](../introduction/basics-about-model-architecture.md#facade))
-which will use a descendant of [`ProductRepository`](../../packages/framework/src/Model/Product/ProductRepository.php) ([more about repositories](../introduction/basics-about-model-architecture.md#repository))
+For that purpose, we will use a descendant of [`ProductFacade`](../../packages/framework/src/Model/Product/ProductFacade.php) ([more about facades](../model/basics-about-model-architecture.md#facade))
+which will use a descendant of [`ProductRepository`](../../packages/framework/src/Model/Product/ProductRepository.php) ([more about repositories](../model/basics-about-model-architecture.md#repository))
 that can talk to the persistence layer. We will extend the framework classes and implement new methods in the next two steps.*
 
 #### 3.2 - Extend [`ProductRepository`](../../packages/framework/src/Model/Product/ProductRepository.php) and implement method `findByExternalId()` in order to be able find a [`Product`](../../packages/framework/src/Model/Product/Product.php) by an external ID

@@ -93,7 +93,7 @@ Yes, there is some prepared configuration for Shopsys Framework cron commands in
 Do not forget to set up a cron on your server to execute [`php phing cron`](/docs/introduction/console-commands-for-application-management-phing-targets.md#cron) every 5 minutes.
 
 ## Why are you using entity data instead of entities for Symfony forms?
-We are using [entity data objects](entities.md#entity-data) instead of [entities](basics-about-model-architecture.md#entity)
+We are using [entity data objects](entities.md#entity-data) instead of [entities](../model/basics-about-model-architecture.md#entity)
 because Symfony forms need setters for all fields and we don't want to mess entities with them.
 
 ## What is the configuration file `services_test.yml` good for?

@@ -1,21 +1,21 @@
-# Basics About Model Architecture
+# Introduction to Model Architecture
 
-In this article you will learn about [entities](#entity), [facades](#facade), [repositories](#repository) and their mutual relations.
+In this article you will learn about model, its dependencies, [entities](#entity), [facades](#facade), [repositories](#repository) and their mutual relations.
 
-## Basics about the model
+## Definition of a Model
+Definition of model is adopted form DDD definition of a model. Model is a system of abstractions that describes selected aspect of a domain.
 
-Model architecture of Shopsys Framework is inspired by Domain Driven Design (DDD). Let us define some terms first:
-- **Domain** in DDD is a sphere of knowledge or activity we build application logic around. The domain of Shopsys Framework is e-commerce.
-- **Domain model** is a system of abstractions that describes selected aspects of the domain.
-- **Domain logic** or **business logic** is the higher level rules for how objects of the domain model interact with one another.
+Domain is a sphere of knowledge or activity we build application logic around. The domain of Shopsys Framework is e-commerce.
+
+Each domain has its logic which is the higher level rules for how objects of the domain model interact with one another.
 
 Domain model of Shopsys Framework is located in [`FrameworkBundle/Model`](https://github.com/shopsys/framework/tree/master/src/Model). Its concept is to separate behavior and properties of objects from its persistence. This separation is suitable for code reusability, easier testing and it fulfills the Single Responsibility Principle.
 
 Code belonging to the same feature is grouped together (eg. `Cart` and `CartItem`). Names of classes and methods are based on real world vocabulary to be more intuitive (eg. `OrderHashGenerator` or `getSellableProductsInCategory()`).
 
-Model is divided into three parts: Entity, Repository and Facade. There is `EntityManager` to access the database.
+Model is mostly divided into three parts: Entity, Repository and Facade.
 
-![model architecture schema](img/model-architecture.png 'model architecture schema')
+![model architecture schema](../introduction/img/model-architecture.png 'model architecture schema')
 
 ## Entity
 Is class encapsulating data. All entities are persisted by Doctrine ORM. One entity class usually represents one table in the database and one instance of the entity represents one row in the table. The entity is composed of fields, which can be mapped to columns in the table. Doctrine ORM annotations are used to define the details about the database mapping (types of columns, relations, etc.).
@@ -24,7 +24,7 @@ Entities are inspired by Rich Domain Model. That means entity is the place where
 
 Entities can be used by all layers of the model and even outside of model (eg. controller or templates).
 
-You'll find more about our entities specialities in a [detailed article](entities.md).
+You'll find more about our entities specialities in a [detailed article](../introduction/entities.md).
 
 ### Example
 ```php
@@ -123,7 +123,7 @@ class CartRepository
             'DELETE FROM cart_items WHERE cart_id IN (
                 SELECT C.id
                 FROM carts C
-                WHERE C.modified_at <= :timeLimit AND user_id IS NULL)',
+                WHERE C.modified_at <= :timeLimit AND user_id IS NOT NULL)',
             new ResultSetMapping()
         );
 
@@ -132,7 +132,7 @@ class CartRepository
         ]);
 
         $nativeQuery = $this->em->createNativeQuery(
-            'DELETE FROM carts WHERE modified_at <= :timeLimit AND user_id IS NULL',
+            'DELETE FROM carts WHERE modified_at <= :timeLimit AND user_id IS NOT NULL',
             new ResultSetMapping()
         );
 
@@ -193,6 +193,9 @@ class CartFacade
 ```
 
 ## Cooperation of layers
-The controller handles the request (eg. [saved data](entities.md#entity-data) from form) and passes data to the facade.
+The controller handles the request (eg. [saved data](../introduction/entities.md#entity-data) from form) and passes data to the facade.
 The facade receives data from the controller and requests appropriate entities from the repository.
 Entities and supporting classes (like recalculators, schedulers) processes data and returns output to the facade, that persist it by entity manager.
+
+## Rules to a model architecture
+To assert right usage of a model there are rules to a what is and what is not a model. You can read more about them in [Rules to Model](./rules-to-model.md)

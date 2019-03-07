@@ -10,7 +10,6 @@
 * [Installation Using Docker on Production Server](installation/installation-using-docker-on-production-server.md)
 * [Console Commands for Application Management (Phing Targets)](./introduction/console-commands-for-application-management-phing-targets.md)
 * [Automated Testing](./introduction/automated-testing.md)
-* [Basics About Model Architecture](./introduction/basics-about-model-architecture.md)
 * [Framework Extensibility](introduction/framework-extensibility.md)
 * [Custom Entities](introduction/custom-entities.md)
 * [Basics About Package Architecture](./introduction/basics-about-package-architecture.md)
@@ -43,6 +42,9 @@
 * [Implementing a basic data import](./cookbook/basic-data-import.md)
 * [Creating a Multidomain Design](./cookbook/creating-a-multidomain-design.md)
 * [Working with Multiple Cron Instances](./cookbook/working-with-multiple-cron-instances.md)
+
+## Model
+* [Basics About Model Architecture](./model/introduction-to-model-architecture.md)
 
 ## Functional documentation
 * [Behavior of Product Variants](./functional/behavior-of-product-variants.md)
