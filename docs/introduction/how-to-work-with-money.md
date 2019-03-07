@@ -327,7 +327,7 @@ class MyEntity
 
 ### In Parameters
 
-When you want to use a `Money` instance as a parameter in DQL, use the `getAmount` method in your [repository class](/docs/introduction/basics-about-model-architecture.md#repository):
+When you want to use a `Money` instance as a parameter in DQL, use the `getAmount` method in your [repository class](/docs/model/introduction-to-model-architecture.md#repository):
 
 ```php
 use Shopsys\FrameworkBundle\Component\Money\Money;

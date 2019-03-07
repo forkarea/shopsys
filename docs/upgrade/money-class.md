@@ -112,7 +112,7 @@ As an example, see the change in `@ShopsysShop/Front/Content/Order/preview.html.
 ```
 
 Code manipulating with prices in a complex way does not belong into templates.
-In such situation, you should probably refactor your code and move the logic into your [model](/docs/introduction/basics-about-model-architecture.md).
+In such situation, you should probably refactor your code and move the logic into your [model](/docs/model/introduction-to-model-architecture.md).
 
 ### Comparing monetary values in templates
 Instead of comparison operators, you should use the methods for [comparing Money](/docs/introduction/how-to-work-with-money.md#comparing) such as `equals`, `isGreaterThan`, `isGreaterOrEqualTo`, etc.
