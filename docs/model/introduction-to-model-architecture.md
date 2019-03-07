@@ -202,7 +202,7 @@ Entities and supporting classes (like recalculators, schedulers) processes data 
 ## Model extension
 Entity extension is described in [Entity Extension article](../extensibility/entity-extension.md).
 
-Other parts of a model are extended by standard inheritance. 
+Other parts of a model are extended by standard inheritance.
 
 ## Rules to a model architecture
 To assert right usage of a model there are rules to a what is and what is not a model. You can read more about them in [Rules to Model](./rules-to-model.md)
