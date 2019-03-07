@@ -45,6 +45,7 @@
 
 ## Model
 * [Basics About Model Architecture](./model/introduction-to-model-architecture.md)
+* [Rules to Model](./model/rules-to-model.md)
 
 ## Functional documentation
 * [Behavior of Product Variants](./functional/behavior-of-product-variants.md)
