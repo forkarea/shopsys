@@ -1,4 +1,4 @@
-# Rules to a Model
+# Rules to a model
 In this article you will learn about model rules, what is and what is not model, and how to correctly create and insert new functionality into existing directory architecture.
 
 ## Rules
@@ -6,7 +6,7 @@ In this article you will learn about model rules, what is and what is not model,
 - classes in model must always represent a some kind of behavior of a model unit
 - model unit should always be represented by an Entity
 
-## What is and What is Not a Model
+## What is and what is not a model
 *Model is a system of abstractions that describes selected aspect of a domain.*
 
 That means that everything in a model should be related to some functionality of Domain, in our case, e-commerce.
@@ -42,8 +42,8 @@ Units of model without persisted entity:
 * Heureka
 * ShopInfo
 
-## Model Grids
-<!-- TODO: add a link to a grid documentation -->
+## Model grids
+<!--- TODO: add a link to a grid documentation -->
 Grids are usable in any different domain, but are located in a `\Shopsys\FrameworkBundle\<MODEL>\Grid`. These classes will be moved to a different folder.
 
 ## MultidomainEnityClassProvider
