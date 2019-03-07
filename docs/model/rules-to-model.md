@@ -33,7 +33,7 @@ Some concepts in our current model does not follow rules listed above.
 * Slider - will be moved to a components
 * Statistics - will be moved to a components
 
-## Model Without Persisted Entity Representation
+## Model without persisted entity representation
 Some models does not have a persisted entity that represents a model unit. For example one of them is Feed, even though it does not have a entity, it is related to a e-commerce domain and because of that we keep it in a model directory.
 
 Units of model without persisted entity:
