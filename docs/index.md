@@ -44,7 +44,7 @@
 * [Working with Multiple Cron Instances](./cookbook/working-with-multiple-cron-instances.md)
 
 ## Model
-* [Basics About Model Architecture](./model/introduction-to-model-architecture.md)
+* [Introduction to Model Architecture](./model/introduction-to-model-architecture.md)
 * [Rules to Model](./model/rules-to-model.md)
 
 ## Functional documentation
