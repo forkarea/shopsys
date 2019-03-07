@@ -2,8 +2,8 @@
 
 In this article you will learn about model, its dependencies, [entities](#entity), [facades](#facade), [repositories](#repository) and their mutual relations.
 
-## Definition of a Model
-Definition of model is adopted form DDD definition of a model. Model is a system of abstractions that describes selected aspect of a domain.
+## Definition of a model
+Definition of model is adopted from [DDD](https://stackoverflow.com/questions/1222392/can-someone-explain-domain-driven-design-ddd-in-plain-english-please/1222488#1222488) definition of a model. Model is a system of abstractions that describes selected aspect of a domain.
 
 Domain is a sphere of knowledge or activity we build application logic around. The domain of Shopsys Framework is e-commerce.
 
@@ -123,7 +123,7 @@ class CartRepository
             'DELETE FROM cart_items WHERE cart_id IN (
                 SELECT C.id
                 FROM carts C
-                WHERE C.modified_at <= :timeLimit AND user_id IS NOT NULL)',
+                WHERE C.modified_at <= :timeLimit AND user_id IS NULL)',
             new ResultSetMapping()
         );
 
@@ -132,7 +132,7 @@ class CartRepository
         ]);
 
         $nativeQuery = $this->em->createNativeQuery(
-            'DELETE FROM carts WHERE modified_at <= :timeLimit AND user_id IS NOT NULL',
+            'DELETE FROM carts WHERE modified_at <= :timeLimit AND user_id IS NULL',
             new ResultSetMapping()
         );
 
