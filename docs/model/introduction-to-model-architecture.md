@@ -151,6 +151,8 @@ Facades are a single entry-point into the model. That means you can use the same
 
 Facades as entry-point of the model can be used anywhere outside of the model.
 
+Facades represent all available use-cases for specific model.
+
 ### Example
 ```php
 // FrameworkBundle/Model/Cart/CartFacade.php
@@ -196,6 +198,11 @@ class CartFacade
 The controller handles the request (eg. [saved data](../introduction/entities.md#entity-data) from form) and passes data to the facade.
 The facade receives data from the controller and requests appropriate entities from the repository.
 Entities and supporting classes (like recalculators, schedulers) processes data and returns output to the facade, that persist it by entity manager.
+
+## Model extension
+Entity extension is described in [Entity Extension article](../extensibility/entity-extension.md).
+
+Other parts of a model are extended by standard inheritance. 
 
 ## Rules to a model architecture
 To assert right usage of a model there are rules to a what is and what is not a model. You can read more about them in [Rules to Model](./rules-to-model.md)
