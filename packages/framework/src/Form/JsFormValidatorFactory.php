@@ -62,7 +62,7 @@ class JsFormValidatorFactory extends BaseJsFormValidatorFactory
                 }
             }
 
-            array_push($transformer['choiceList'], $optionsItemsThatAreNotInstanceOfParameterValue);
+            $transformer['choiceList'] = array_merge($transformer['choiceList'], $optionsItemsThatAreNotInstanceOfParameterValue);
 
             array_unshift($viewTransformers, $transformer);
         }
